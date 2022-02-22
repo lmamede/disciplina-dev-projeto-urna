@@ -12,7 +12,7 @@ Projeto de Urna Eletrônica para a Disciplina de Desenvolvimento Web do Curso de
 * o util.js (possivelmente em PHP) vai resgatar as informações do banco, montar JSON com elas e retornar para o script.js
 
 ## Definition of Done
-* [ ] criar uma conta em um site de hospedagem grátis para o db (https://candidatos-urna.000webhostapp.com/)
+* [x] criar uma conta em um site de hospedagem grátis para o db (https://candidatos-urna.000webhostapp.com/)
 * [ ] levantar o banco
 * [ ] popular dados do banco
 * [ ] modificar requisição para resgatar a partir banco

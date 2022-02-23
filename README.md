@@ -12,7 +12,7 @@ Projeto de Urna Eletrônica para a Disciplina de Desenvolvimento Web do Curso de
 * [x] criar uma conta em um site de hospedagem grátis para o db (https://candidatos-urna.000webhostapp.com/)
 * [x] levantar o banco
 * [ ] popular dados do banco
-* [ ] modificar requisição para resgatar a partir banco
+* [ ] modificar requisição para inserir voto no banco
 * [ ] fazer a requisição em php
 
 ## Tabelas do Banco

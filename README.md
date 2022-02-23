@@ -1,7 +1,8 @@
 # disciplina-dev-projeto-urna
 Projeto de Urna Eletrônica para a Disciplina de Desenvolvimento Web do Curso de Ciência da Computação da UFRJ - 2021.2
 
-
+## Dúvidas
+* Como deve ser mostrado o resultado da eleição.
 
 ## Objetivo
 * Criar um banco para votação dos usuários

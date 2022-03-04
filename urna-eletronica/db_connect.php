@@ -9,9 +9,29 @@
 
     $con = mysqli_connect($host, $user,$senha, $database) or die("Erro ao se conectar com o servidor do banco de dados!");
     
-    if (isset($_POST['submit'])) {
-        $etapa = $_POST['etapa'];
-        $numero = $_POST['numero'];
-        echo "<script>console.log('Debug Objects: " . $etapa . "' );</script>";
+    if (isset($_POST)) {
+        
+        $json = file_get_contents('php://input');
+        
+        $data = json_decode($json);
+        
+        $etapa = $data->etapa;
+        $numero = $data ->numero;
+
+        
+        $sql_insert = "insert into `Votacao` (etapa,numero_candidato) 
+        values('$etapa', '$numero')";
+        
+        $result = mysqli_query($con, $sql_insert);
+        if($result){
+            echo "Voto registrado com sucesso!";
+            var_dump(http_response_code(200));
+        }else{
+            var_dump(http_response_code(500));
+            die(mysqli_error($con));
+        }
+        
+    }else{
+        var_dump(http_response_code(500));
     }
 ?>

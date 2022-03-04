@@ -18,7 +18,7 @@ var etapas = null
 var numeroDigitado = ''
 var votoEmBranco = false
 
-ajax('etapas.json', 'GET', (response) => {
+ajax('etapas.json', 'GET', null, (response) => {
   etapas = JSON.parse(response)
   console.log(etapas)
 
@@ -227,6 +227,13 @@ function confirmar() {
     `
   }
 
-  (new Audio('audio/se3.mp3')).play()
+  let dados = JSON.stringify(votos.pop());
+
+  //Envia os votos da etapa corrente para ser computado em php
+  ajax('https://candidatos-urna.000webhostapp.com', 'GET', dados, (response) => {
+    console.log("SUCESSO");
+  })
+
+  //(new Audio('audio/se3.mp3')).play()
   comecarEtapa()
 }

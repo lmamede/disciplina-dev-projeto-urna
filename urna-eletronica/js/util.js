@@ -4,7 +4,7 @@ function ajax(url, method, data, callback) {
   request.overrideMimeType("application/json");
   request.open(method, url, true);
   request.setRequestHeader("Content-type", "application/json")
-  request.onreadystatechange = () => {
+  request.onreadystatechange = function() {
     if (request.readyState === 4 && request.status == "200") {
         callback(request.responseText);
     }

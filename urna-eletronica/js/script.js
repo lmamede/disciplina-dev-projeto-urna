@@ -8,6 +8,7 @@ const rPartidoPolitico = document.querySelector('.esquerda .rotulo.r4 .partido-p
 const rNomeVice = document.querySelector('.esquerda .rotulo.r4 .nome-vice')
 const rRodape = document.querySelector('.tela .rodape')
 
+const rBoletim = document.querySelector('.boletim') 
 const rCandidato = document.querySelector('.direita .candidato')
 const rVice = document.querySelector('.direita .candidato.menor')
 
@@ -36,6 +37,7 @@ window.onload = () => {
   document.querySelector('.teclado--botao.branco').onclick = () => branco()
   document.querySelector('.teclado--botao.laranja').onclick = () => corrigir()
   document.querySelector('.teclado--botao.verde').onclick = () => confirmar()
+  document.querySelector('.teclado--botao.azul').onclick = () => gerarBoletim()
 }
 
 /**
@@ -59,6 +61,7 @@ function comecarEtapa() {
   rPartidoPolitico.style.display = 'none'
   rNomeVice.style.display = 'none'
   rRodape.style.display = 'none'
+  rBoletim.style.display = 'none'
 
   for (let i = 0; i < etapa['numeros']; i++) {
     let pisca = i == 0 ? ' pisca' : ''
@@ -230,10 +233,29 @@ function confirmar() {
   let dados = JSON.stringify(votos.pop());
 
   //Envia os votos da etapa corrente para ser computado em php
-  ajax('https://candidatos-urna.000webhostapp.com', 'GET', dados, (response) => {
+  ajax('https://candidatos-urna.000webhostapp.com/db_connect.php', 'POST', dados, (response) => {
     console.log("SUCESSO");
   })
 
   //(new Audio('audio/se3.mp3')).play()
   comecarEtapa()
+}
+
+function gerarBoletim() {
+    let dados;
+    ajax('https://candidatos-urna.000webhostapp.com/db_connect.php', 'GET', null, (response) => {
+        dados = JSON.parse(response);
+        console.log(dados);
+        rBoletim.style.display = 'block';
+        for(let dado of dados){
+            let numero_candidato = dado['numero_candidato'];
+            let votos = dado['votos'];
+            let node = document.createTextNode(`${numero_candidato} ${votos}`);
+            rBoletim.appendChild(document.createElement("br").appendChild(node));    
+        }
+        
+    });
+  
+
+  
 }

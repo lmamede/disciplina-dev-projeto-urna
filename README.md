@@ -11,9 +11,10 @@ Projeto de Urna Eletrônica para a Disciplina de Desenvolvimento Web do Curso de
 ## Definition of Done
 * [x] criar uma conta em um site de hospedagem grátis para o db (https://candidatos-urna.000webhostapp.com/)
 * [x] levantar o banco
-* [ ] popular dados do banco
-* [ ] modificar requisição para inserir voto no banco
-* [ ] fazer a requisição em php
+* [x] popular dados do banco, modificar requisição para inserir voto no banco
+* [ ] fazer a requisição em js para o php
+* [x] capturar json da requisição POST no back do php
+* [ ] retornar na tela a consulta com a relação atual dos votos.
 
 ## Tabelas do Banco
 

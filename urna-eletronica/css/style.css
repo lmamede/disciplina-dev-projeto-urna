@@ -18,6 +18,46 @@ h1 {
   justify-content: center;
 }
 
+
+.boletim {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  min-width: 300px;
+  min-height: 500px;
+  background-image: url('../img/boletim.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  margin: 0;
+}
+
+.table-h1{
+  padding-top: 2rem;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+th{
+  padding: 1rem;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+td{
+  padding-left: 2rem;
+  
+}
+
+td:first-child{
+  padding-right: 6em;
+  padding-top: 0em;
+  padding-left: 3em;
+}
+
+
 .urna {
   display: inline-flex;
   padding: 1.5rem 3rem;
@@ -101,7 +141,14 @@ h1 {
   background-color: orangered;
 }
 .teclado--botao.especial.verde {
-  padding: 0.5rem 0.25rem 1.5rem 0.25rem;
+  padding: 0.2rem 0.2rem 1rem 0.2rem;
   font-size: 0.95em;
   background-color: green;
+}
+
+.teclado--botao.especial.azul {
+  padding: 0.2rem 0.2rem 1rem 0.2rem;
+  font-size: 0.95em;
+  background-color: blue;
+  color: white;
 }

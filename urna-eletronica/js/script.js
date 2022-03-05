@@ -247,15 +247,34 @@ function gerarBoletim() {
         dados = JSON.parse(response);
         console.log(dados);
         rBoletim.style.display = 'block';
+        dados = [{"etapa": "vereador", "numero_candidato":"15232", "votos":"50"}];
+    
         for(let dado of dados){
+          var table;
+          if(dado['etapa'] == "vereador"){
+            table = document.getElementById("vereador-table");
+          }else{
+            table = document.getElementById("prefeito-table");
+          }
+            var row = document.createElement("tr");
+            var cell1 = document.createElement("td");
+            var cell2 = document.createElement("td");
+            var cell3 = document.createElement("td");
+            
+            let nome_candidato = "Francisco";
             let numero_candidato = dado['numero_candidato'];
             let votos = dado['votos'];
-            let node = document.createTextNode(`${numero_candidato} ${votos}`);
-            rBoletim.appendChild(document.createElement("br").appendChild(node));    
-        }
+    
+            cell1.innerHTML = nome_candidato;
+            cell2.innerHTML = numero_candidato;
+            cell3.innerHTML = votos;
+    
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            row.appendChild(cell3);
+    
+            table.appendChild(row)    
+        }    
         
-    });
-  
-
-  
+    }); 
 }

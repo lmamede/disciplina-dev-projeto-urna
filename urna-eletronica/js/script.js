@@ -244,9 +244,9 @@ function confirmar() {
   //Envia os votos da etapa corrente para ser computado em php
   ajax('https://candidatos-urna.000webhostapp.com/db_connect.php', 'POST', dados, (response) => {
     console.log("SUCESSO");
-  })
+  });
 
-  (new Audio('audio/se3.mp3')).play()
+  (new Audio('audio/se3.mp3')).play();
   comecarEtapa()
 }
 

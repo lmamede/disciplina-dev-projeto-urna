@@ -11,3 +11,4 @@ https://stackoverflow.com/questions/4064444/returning-json-from-a-php-script
 https://stackoverflow.com/questions/383631/json-encode-mysql-results
 https://www.codegrepper.com/code-examples/php/check+if+request+method+is+post+or+get+in+php
 https://www.w3schools.com/jsreF/met_node_appendchild.asp
+https://www.youtube.com/watch?v=Rl50qI6e7HU

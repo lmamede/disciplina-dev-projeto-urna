@@ -187,7 +187,7 @@ function corrigir() {
 }
 
 /**
- * Confirma o numero selecionado.
+ * Confirma o numero selecionado e envia os votos para o banco.
  */
 function confirmar() {
   console.log('confirmar')
@@ -246,9 +246,14 @@ function confirmar() {
     console.log("SUCESSO");
   })
 
-  //(new Audio('audio/se3.mp3')).play()
+  (new Audio('audio/se3.mp3')).play()
   comecarEtapa()
 }
+
+/**
+ * Requisita um JSON com o resultado parcial da eleição corrente
+ * e mostra em uma tabela HTML na tela
+ */
 
 function gerarBoletim() {
     let dados;

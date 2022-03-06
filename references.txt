@@ -1,2 +1,13 @@
 https://www.geeksforgeeks.org/how-to-send-a-json-object-to-a-server-using-javascript/
 https://www.youtube.com/watch?v=npMqxgGc0Lk
+https://www.tre-pr.jus.br/imprensa/noticias-tre-pr/2018/Outubro/boletim-de-urna-com-9-mil-votos-para-um-candidato-e-falso
+https://www.php.net/manual/pt_BR/function.http-response-code.php
+https://www.geeksforgeeks.org/how-to-receive-json-post-with-php/#:~:text=To%20receive%20JSON%20string%20we,to%20decode%20the%20JSON%20string.
+https://stackoverflow.com/questions/44105471/in-javascript-how-to-send-data-to-php-file-using-post-method
+https://www.youtube.com/watch?v=c4v5l8Rs-Yc
+https://www.youtube.com/watch?v=72U5Af8KUpA
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send
+https://stackoverflow.com/questions/4064444/returning-json-from-a-php-script
+https://stackoverflow.com/questions/383631/json-encode-mysql-results
+https://www.codegrepper.com/code-examples/php/check+if+request+method+is+post+or+get+in+php
+https://www.w3schools.com/jsreF/met_node_appendchild.asp

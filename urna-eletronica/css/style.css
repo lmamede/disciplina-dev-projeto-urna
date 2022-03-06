@@ -25,8 +25,9 @@ h1 {
   padding: 1rem;
   min-width: 300px;
   min-height: 500px;
+  height:auto;
   background-image: url('../img/boletim.png');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Courier New', Courier, monospace;
   font-size: 11px;
@@ -44,6 +45,7 @@ th{
   padding: 1rem;
   font-size: 14px;
   font-weight: normal;
+  text-align: left;
 }
 
 td{
@@ -52,9 +54,10 @@ td{
 }
 
 td:first-child{
-  padding-right: 6em;
+  padding-right: 2em;
   padding-top: 0em;
-  padding-left: 3em;
+  padding-left: 2em;
+  width: 200px;
 }
 
 

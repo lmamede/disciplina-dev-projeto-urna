@@ -18,6 +18,7 @@ var etapaAtual = 0
 var etapas = null
 var numeroDigitado = ''
 var votoEmBranco = false
+var rows = []
 
 ajax('etapas.json', 'GET', null, (response) => {
   etapas = JSON.parse(response)
@@ -203,17 +204,25 @@ function confirmar() {
       console.log(`Votou em ${numeroDigitado}`)
     } else {
       // Votou nulo
+      let nulo = 'nulo-p';
+      if(etapaAtual == 0){
+          nulo = 'nulo-v';
+      }
       votos.push({
         'etapa': etapa['titulo'],
-        'numero': null
+        'numero': nulo
       })
       console.log('Votou Nulo')
     }
   } else if (votoEmBranco) {
     // Votou em branco
+      let numero = '00';
+      if(etapaAtual == 0){
+          numero = '00000';
+      }
       votos.push({
         'etapa': etapa['titulo'],
-        'numero': ''
+        'numero': numero
       })
       console.log('Votou em Branco')
   } else {
@@ -247,22 +256,37 @@ function gerarBoletim() {
         dados = JSON.parse(response);
         console.log(dados);
         rBoletim.style.display = 'block';
-        dados = [{"etapa": "vereador", "numero_candidato":"15232", "votos":"50"}];
-    
+        var table;
+        
+        for(let row of rows){
+            row.remove();
+        }
+       
         for(let dado of dados){
-          var table;
+          var etapa;
           if(dado['etapa'] == "vereador"){
             table = document.getElementById("vereador-table");
+            etapa = etapas[0];
           }else{
             table = document.getElementById("prefeito-table");
+            etapa = etapas[1];
           }
             var row = document.createElement("tr");
             var cell1 = document.createElement("td");
             var cell2 = document.createElement("td");
             var cell3 = document.createElement("td");
             
-            let nome_candidato = "Francisco";
             let numero_candidato = dado['numero_candidato'];
+            let nome_candidato = "Votos Brancos";
+            let dados_candidato = etapa['candidatos'][numero_candidato];
+            
+            if(dados_candidato){
+                nome_candidato = dados_candidato['nome'];
+            }else if(numero_candidato == "nulo-p" || numero_candidato == "nulo-v"){
+                nome_candidato = 'Votos Nulos';
+                numero_candidato = ""
+            }
+            
             let votos = dado['votos'];
     
             cell1.innerHTML = nome_candidato;
@@ -272,8 +296,9 @@ function gerarBoletim() {
             row.appendChild(cell1);
             row.appendChild(cell2);
             row.appendChild(cell3);
-    
-            table.appendChild(row)    
+            
+            rows.push(row);
+            table.appendChild(row);    
         }    
         
     }); 

@@ -15,11 +15,12 @@ Projeto de Urna Eletrônica para a Disciplina de Desenvolvimento Web do Curso de
 * [x] fazer a requisição em js para o php
 * [x] capturar json da requisição POST no back do php
 * [x] enviar json da requisição GET no back do php
-* [ ] retornar na tela a consulta com a relação atual dos votos.
-     * [ ] adicionar botão para geração do boletim de eleição 
-     * [ ] adcionar o campo etapa no json da consulta
-     * [ ] usar o etapa para acessar o json local com a relação dos candidatos (para pegar nome e partido)
-     * [ ] fazer uma visualização bonitinha em tabela dos votos
+* [x] retornar na tela a consulta com a relação atual dos votos.
+     * [x] adicionar botão para geração do boletim de eleição 
+     * [x] adcionar o campo etapa no json da consulta
+     * [x] usar o etapa para acessar o json local com a relação dos candidatos (para pegar nome e partido)
+     * [x] fazer uma visualização bonitinha em tabela dos votos
+     * [x] tratar brancos e nulos
 
 ## Tabelas do Banco
 
